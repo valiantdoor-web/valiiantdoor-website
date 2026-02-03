@@ -1,0 +1,25 @@
+{
+  "name": "valiant-garage-door",
+  "version": "1.0.0",
+  "description": "Valiant Garage Door - Professional Garage Door Services",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "keywords": [
+    "garage-door",
+    "repair",
+    "installation"
+  ],
+  "author": "Valiant Garage Door",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemailer": "^7.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

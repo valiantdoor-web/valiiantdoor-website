@@ -1,0 +1,29 @@
+[
+  {
+    "id": "review-001",
+    "name": "Taylor M.",
+    "city": "North Ridge",
+    "rating": 5,
+    "message": "They arrived the same day and had my door running quietly again. Clear pricing and super friendly techs.",
+    "status": "approved",
+    "createdAt": "2026-01-10T16:20:00.000Z"
+  },
+  {
+    "id": "review-002",
+    "name": "Crestline Logistics",
+    "city": "Industrial Park",
+    "rating": 5,
+    "message": "We replaced three doors at our warehouse. Install was quick and communication was excellent.",
+    "status": "approved",
+    "createdAt": "2026-01-08T13:10:00.000Z"
+  },
+  {
+    "id": "review-003",
+    "name": "Sam R.",
+    "city": "Oakview",
+    "rating": 5,
+    "message": "The opener upgrade is so quiet. They also tuned the rollers and the door feels brand new.",
+    "status": "approved",
+    "createdAt": "2026-01-05T18:05:00.000Z"
+  }
+]

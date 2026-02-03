@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://2026-01-26-website.vercel.app/sitemap.xml

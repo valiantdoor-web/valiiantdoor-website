@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our mission at Valiant Garage Door - providing exceptional service">
+    <title>Our Mission - Valiant Garage Door</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Valiant Garage Door</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="mission.html" class="active">Mission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mission Header -->
+    <section class="services-header">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>Committed to excellence in garage door services</p>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission-content">
+        <div class="container">
+            <div class="mission-statement">
+                <h3>Our Purpose</h3>
+                <p>At Valiant Garage Door, our mission is to provide exceptional garage door services with integrity, professionalism, and a commitment to customer satisfaction. We believe that every home and business deserves a garage door that is safe, reliable, and beautifully functional.</p>
+                
+                <h3>Our Values</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h4>🛡️ Safety First</h4>
+                        <p>We prioritize the safety of our customers and their families by ensuring every installation and repair meets the highest safety standards.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>⚡ Quality Service</h4>
+                        <p>From the first call to project completion, we deliver consistent, high-quality service that exceeds expectations.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>⭐ Customer Satisfaction</h4>
+                        <p>Your satisfaction is our success. We work tirelessly to ensure every customer is happy with our work.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>🤝 Integrity</h4>
+                        <p>We operate with honesty and transparency, providing fair pricing and honest recommendations.</p>
+                    </div>
+                </div>
+
+                <h3>What Sets Us Apart</h3>
+                <ul class="mission-list">
+                    <li><strong>24/7 Emergency Service:</strong> We're here when you need us most, day or night.</li>
+                    <li><strong>Expert Technicians:</strong> Our team is trained, certified, and experienced in all aspects of garage door service.</li>
+                    <li><strong>Premium Products:</strong> We use only the highest quality parts and materials for lasting results.</li>
+                    <li><strong>Transparent Pricing:</strong> No hidden fees or surprise charges - you'll know the cost upfront.</li>
+                    <li><strong>Warranty Protection:</strong> All our work is backed by comprehensive warranties for your peace of mind.</li>
+                    <li><strong>Community Focus:</strong> We're proud to serve our local community and build lasting relationships.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div id="reviewsContainer" class="testimonials-grid">
+                <!-- Reviews will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Experience the Valiant Difference</h2>
+            <p>Let us show you what exceptional service looks like</p>
+            <a href="quote.html" class="btn">Request a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Valiant Garage Door</h3>
+                    <p>Professional garage door installation and repair services</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: business@valiantgaragedoor.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Valiant Garage Door. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Load reviews
+        async function loadReviews() {
+            try {
+                const response = await fetch('/data/reviews.json');
+                const reviews = await response.json();
+                
+                const container = document.getElementById('reviewsContainer');
+                container.innerHTML = reviews.map(review => `
+                    <div class="testimonial-card">
+                        <div class="rating">${'⭐'.repeat(review.rating)}</div>
+                        <p class="testimonial-text">"${review.message}"</p>
+                        <p class="testimonial-author"><strong>${review.name}</strong> - ${review.city}</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading reviews:', error);
+            }
+        }
+        
+        loadReviews();
+    </script>
+</body>
+</html>
