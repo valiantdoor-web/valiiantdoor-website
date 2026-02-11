@@ -68,8 +68,11 @@ The website will be available at `http://localhost:3000`
 
 ```
 valiiantdoor-website/
+├── api/
+│   ├── requests.js              # Serverless function for quote submissions
+│   └── health.js                # Serverless function for health checks
 ├── server/
-│   └── server.js               # Express server with nodemailer
+│   └── server.js               # Legacy Express server (for local dev)
 ├── assets/
 │   ├── logo/                   # Logo files
 │   └── [other images]          # Service images, backgrounds, icons
@@ -100,6 +103,15 @@ valiiantdoor-website/
 ```
 
 ## 🌐 Deployment to Vercel
+
+This project is configured for seamless deployment on Vercel using serverless API routes.
+
+### Architecture
+
+- **Static Files**: HTML, CSS, JS, and assets are served directly from the root directory
+- **API Routes**: Serverless functions in the `api/` directory
+  - `/api/requests` - POST endpoint for quote form submissions
+  - `/api/health` - GET endpoint for health checks
 
 ### One-Click Deploy
 
@@ -151,14 +163,14 @@ After deployment, update the sitemap URL in `sitemap.xml` and `robots.txt` with 
 - **Contact**: Contact information and inquiry form
 
 ### Technical Features
-- Express.js backend for serving static files and handling API requests
+- Vercel serverless API routes for backend functionality
 - Nodemailer integration for email notifications on quote submissions
 - Responsive design (mobile, tablet, desktop)
 - Modern UI with professional branding
 - JSON-based customer reviews system
 - SEO-optimized with sitemap and robots.txt
 - Environment-based configuration
-- Vercel-ready deployment configuration
+- Vercel-ready deployment with zero configuration
 
 ## 🛠️ API Endpoints
 
@@ -262,10 +274,11 @@ Simply open any HTML file in your browser or access via `http://localhost:3000/[
 
 ### Vercel Deployment Issues
 
-1. Ensure `vercel.json` is properly configured
-2. Add environment variables in Vercel dashboard
-3. Check build logs in Vercel for specific errors
-4. Verify Node.js version compatibility
+1. **Environment Variables**: Ensure `EMAIL_USER`, `EMAIL_PASS`, and `EMAIL_TO` are set in Vercel dashboard
+2. **Build Logs**: Check Vercel build logs for specific errors
+3. **API Routes**: Verify API routes are in the `api/` directory
+4. **Dependencies**: Ensure `nodemailer` is listed in `package.json` dependencies
+5. **Deployment Region**: Consider deploying in a region close to your SMTP server for better performance
 
 ## 📄 License
 
